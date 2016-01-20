@@ -1,0 +1,211 @@
+/*
+Copyright (c) 2009 - 2015, Evan Jehu
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the author nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+*/
+
+body {
+  padding: 2px;
+  width: 360px;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  line-height: 1.25;
+  margin: -3px -2px 0 -2px;
+}
+
+.qs_input {
+  font-size: 12px;
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+  padding: 8px 5px 7px 5px;
+  margin: 0;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #4285f4;
+}
+
+#tools {
+  margin: 0;
+}
+
+.noresult {
+  text-align: center;
+  padding: 25px;
+  font-size: 16px;
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+  color: #200772;
+}
+
+div.template {
+  width: 100%;
+  position:relative;
+  top:0;
+}
+
+b {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.withfocus b {
+  color:white;
+}
+
+.item:hover b {
+  color:white;
+}
+
+.item {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  clear:both;
+  height: 30px;
+  cursor: hand;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+div.tabimage {
+	float: left;
+}
+
+div.tabimage img {
+  vertical-align: middle;
+  padding: 4px 4px 3px 4px;
+  margin: 3px 5px 0 5px;
+  border-radius: 3px;
+}
+
+div.hideicon img {
+  display: none;
+}
+
+div.hideicon {
+  width: 4px;
+  height: 25px;
+}
+
+div.open:hover div.close,
+div.withfocus.open div.close {
+  display: inline;
+  position: relative;
+  float: right;
+  top: 4px;
+  right: 5px;
+  color: white;
+}
+
+div.close {
+  background: url(close.png) no-repeat;
+  background-size: 12px 12px;
+  display: none;
+  height: 18px;
+  width: 18px;
+  cursor: pointer;
+  opacity: .7;
+}
+
+div.close:hover {
+  opacity: 1;
+}
+
+div.title {
+  margin-top: 2px;
+  color: #212121;
+}
+
+div.title, div.url {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+div.closed div.tabimage {
+  opacity: .4;
+}
+
+div.closed div.title {
+  color: gray;
+}
+
+div.content {
+  margin: 0 0 0 0;
+  padding: 0;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.item:hover, .item:hover div.title, div.closed.item:hover div.title,
+.item:hover div.url {
+  background-color: #ff8732;
+  color: white;
+}
+
+.withfocus:hover, .withfocus:hover div.title, div.closed.withfocus:hover div.title,
+.withfocus:hover div.url,
+.withfocus, .withfocus div.title, div.closed.withfocus div.title,
+.withfocus div.url {
+  background-color: #4285f4;
+  color: white;
+}
+
+img {
+  padding-top: 4px;
+  background-color: white;
+}
+
+.nourl div.title {
+  line-height:25px;
+  vertical-align:middle;
+}
+
+.nourl div.url {
+  display:none;
+}
+
+div.url {
+  display:block;
+  font-size: 9px;
+  color: #455A64;
+}
+
+div.separator.big {
+  height: 30px;
+  color: #212121;
+  font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+  font-size: 13px;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  background: rgba(0,0,0,0.07);
+  padding-top: 2px;
+  margin-top: -1px;
+}
+
+div.separator.big span {
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 5px;
+  border-width: 0;
+}

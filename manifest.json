@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "Youtube playback control",
+  "version": "0.1",
+  "browser_action": {
+	  "default_icon": {
+      "19": "assets/icon.png",
+      "38": "assets/icon@2x.png"
+    },
+    "default_popup": "views/popup/index.html",
+    "default_title": "Youtube Tabs"
+	},
+  "permissions": [
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.youtube.com/watch?v*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
