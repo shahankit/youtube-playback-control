@@ -31,4 +31,12 @@ chrome.tabs.query(queryInfo, function(tabs) {
 			});
 		});
 	});
+	if (tabs.length == 0) {
+		var x = `
+			<div style="text-align: center">No active youtube tabs</div>
+		`
+		$('body').attr('style', 'margin: 0; padding: 0');
+		$('html').attr('style', 'margin: 0; padding: 0');
+		cl.append($(x));
+	}
 });
