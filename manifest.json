@@ -1,7 +1,8 @@
 {
   "manifest_version": 2,
   "name": "Youtube playback control",
-  "version": "0.1",
+  "version": "0.1.1",
+  "description": "Control all youtube tabs from any tab any window.",
   "browser_action": {
 	  "default_icon": {
       "19": "assets/icon.png",
