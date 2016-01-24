@@ -23,14 +23,12 @@ chrome.runtime.onMessage.addListener (
       if (video) {
        		var volume_value=video.volume;
 		   //if volume >1.0
-		  	if((volume_value+0.1)>1.0)
-				{
+		  	if((volume_value+0.1)>1.0){
 				video.volume=1.0;
-				}
-		  else
-			  {
+		     }
+		  else{
 				  video.volume+=0.1;
-			  }
+	       }
 		  
       } else {
       	sendResponse({error: 'No video object found'});
@@ -41,24 +39,18 @@ chrome.runtime.onMessage.addListener (
 	 if (request.message === "decrement_volume") {
       if (video) {
 		  	var volume_value=video.volume;
-       		 //if volume < 0.0
-		  	if((volume_value-0.1)<0.0)
-				{
+       		//if volume < 0.0
+		  	if((volume_value-0.1)<0.0){
 					video.volume=0.0;
-				}
-		  else
-			  {
+			}
+		  else{
 				  video.volume-=0.1;
-			  }
+		}
 		  
       } else {
       	sendResponse({error: 'No video object found'});
       }
     }
-	  
-	  
-	  
-	  
 	  
   }
 );
