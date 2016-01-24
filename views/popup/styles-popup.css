@@ -27,7 +27,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 body {
   padding: 2px;
-  width: 360px;
+  width: 450px;
   height: 100%;
   overflow: hidden;
   overflow-y: auto;
@@ -78,9 +78,10 @@ b {
 }
 
 .item {
+	width: 475px;
   padding-top: 1px;
   padding-bottom: 1px;
-  clear:both;
+ 
   height: 30px;
   cursor: hand;
   border-bottom: 1px solid rgba(0,0,0,0.07);
@@ -156,11 +157,6 @@ div.content {
   overflow-x: hidden;
 }
 
-.item:hover, .item:hover div.title, div.closed.item:hover div.title,
-.item:hover div.url {
-  background-color: #ff8732;
-  color: white;
-}
 
 .withfocus:hover, .withfocus:hover div.title, div.closed.withfocus:hover div.title,
 .withfocus:hover div.url,
