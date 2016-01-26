@@ -94,4 +94,56 @@ http://stopdesign.com/archive/2009/02/04/recreating-the-button.html
 }
 
 
+.volume_plus
+{
+	width: 16px;
+	height: 16px;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfgARgEFwh+DEOaAAAAt0lEQVQoz63QrVJCcRAF8N/9mEEbNIIBitVIIpCAwmMYlBkNvoBkq4HXoPEWZnkImkHuZQ3/6/Axzhj0hJ09uzvn7Bz+iuKEZWccWVNzsBfNPMf+cJC60HKn8CJPy4NG18jAg3dhCW6M0wOlQmVmqVKqUYGhsbVM4x0ItRqfrixM9TybfB8cI1zqa7vQ14ESt8JOqIRXMLdKu+S7svFh4N61ErzZ/pRIy6MnJ8a/BnWuUhxF90/4AkRlKWepF6XlAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE2LTAxLTI0VDA0OjIzOjA4LTA1OjAwfu1sSwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNi0wMS0yNFQwNDoyMzowOC0wNTowMA+w1PcAAAAASUVORK5CYII=');
+	background-repeat: no-repeat;
+	
+	
+}
 
+.volume_style
+{
+	vertical-align: middle;
+   
+    margin: 3px 5px 0 5px;
+    border-radius: 3px;
+	padding-left: 4px;
+    background-color: white;
+	
+}
+.volume_plus:hover
+{
+  background-color: #ff8732;
+  color: white;	
+}
+
+
+.volume_minus
+{
+	background-repeat: no-repeat;
+	width: 16px;
+	height:16px;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfgARgEFiPLq4ubAAAAqUlEQVQoz63QMW4CQQwF0Dc7i0BIFOkimlQpcgNuQc0VQsc96JNj0FBzDsQpoihFtDNDwRKWDVKKYMmWv2V9+3/+G/EKhR5GaGsFsnJ74dQVQ0vBWiWfx7WgePTiy8zSs3cMpJYx16LG3JtGLdFmc2GAgiJJom9TK58Y29nWv3RlY08+FBMPZ4bQkThysOieSNjY/zwZO+5kuS/zVXUt80+j+rbFjnV3iiPSuytJBFH8BgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNi0wMS0yNFQwNDoyMjozNS0wNTowMH53YVYAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTYtMDEtMjRUMDQ6MjI6MzUtMDU6MDAPKtnqAAAAAElFTkSuQmCC');
+}
+.volume_minus:hover
+{
+  background-color: #ff8732;
+  color: white;
+}
+
+
+
+.listinfo:hover
+{
+  background-color: #ff8732;
+  color: white;
+}
+.listinfo
+{
+	float: left;
+	width: 360px;
+	text-overflow: ellipsis;
+}
