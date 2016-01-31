@@ -73,28 +73,24 @@ b {
   color:white;
 }
 
-.item:hover b {
-  color:white;
-}
-
 .item {
   padding-top: 1px;
   padding-bottom: 1px;
-  clear:both;
+  clear: both;
   height: 30px;
   cursor: hand;
   border-bottom: 1px solid rgba(0,0,0,0.07);
+  display: flex;
 }
 
 div.tabimage {
-	float: left;
+  margin: 0 2px 0 2px;
 }
 
 div.tabimage img {
   vertical-align: middle;
-  padding: 4px 4px 3px 4px;
-  margin: 3px 5px 0 5px;
   border-radius: 3px;
+  height: 100%;
 }
 
 div.hideicon img {
@@ -106,8 +102,7 @@ div.hideicon {
   height: 25px;
 }
 
-div.open:hover div.close,
-div.withfocus.open div.close {
+div.tabInfo:hover div.close {
   display: inline;
   position: relative;
   float: right;
@@ -117,7 +112,7 @@ div.withfocus.open div.close {
 }
 
 div.close {
-  background: url(close.png) no-repeat;
+  background: url(../../assets/close.png) no-repeat;
   background-size: 12px 12px;
   display: none;
   height: 18px;
@@ -156,10 +151,34 @@ div.content {
   overflow-x: hidden;
 }
 
-.item:hover, .item:hover div.title, div.closed.item:hover div.title,
-.item:hover div.url {
-  background-color: #ff8732;
+div.tabInfo {
+  flex: 1;
+  padding: 0 2px 0 2px;
+  border-radius: 3px;
+}
+
+img.playImage {
+  content: url('/assets/play.png');
+}
+
+img.playImage:hover {
+  content: url('/assets/playHover.png');
+}
+
+img.pauseImage {
+  content: url('/assets/pause.png');
+}
+
+img.pauseImage:hover {
+  content: url('/assets/pauseHover.png');
+}
+
+.tabInfo:hover, .tabInfo:hover div.title, .tabInfo:hover div.url {
   color: white;
+}
+
+.tabInfo:hover {
+  background-color: #4285f4;
 }
 
 .withfocus:hover, .withfocus:hover div.title, div.closed.withfocus:hover div.title,
@@ -171,7 +190,6 @@ div.content {
 }
 
 img {
-  padding-top: 4px;
   background-color: white;
 }
 
