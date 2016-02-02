@@ -5,7 +5,7 @@ chrome.tabs.query(queryInfo, function(tabs) {
 	tabs.forEach(function(tab) {
 		var imageClass = tab.audible ? 'pauseImage' : 'playImage';
 		var x = `
-			<div class="item tab open" id=${tab.id}>
+			<div class="item" id=${tab.id}>
 				<div class="tabimage" id="playpause${tab.id}">
 					<img class="${imageClass}" id="playImage${tab.id}" border="0">
 				</div>

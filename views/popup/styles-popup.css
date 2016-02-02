@@ -152,7 +152,7 @@ div.content {
 }
 
 div.tabInfo {
-  flex: 1;
+  width: 322px;
   padding: 0 2px 0 2px;
   border-radius: 3px;
 }
