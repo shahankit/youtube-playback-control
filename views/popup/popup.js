@@ -9,6 +9,9 @@ chrome.tabs.query(queryInfo, function(tabs) {
 				<div class="tabimage" id="playpause${tab.id}">
 					<img class="${imageClass}" id="playImage${tab.id}" border="0">
 				</div>
+        <div class="nextimage" id="playnext${tab.id}">
+          <img class="playNext" id="playNextImage${tab.id}" border="0">
+        </div>
 				<div class="tabInfo" id="jump${tab.id}">
 					<div class="close" id="close${tab.id}" title="close tab"></div>
 					<div class="title">${tab.title}</div>
@@ -32,6 +35,16 @@ chrome.tabs.query(queryInfo, function(tabs) {
 				}
 			});
 		});
+
+    $('#playnext'+tab.id).on('click', {tabId: tab.id}, function(event) {
+      chrome.tabs.sendMessage(event.data.tabId, {message: 'toggle_playlist_next', tabId: event.data.tabId}, function(response) {
+        if (response.error) {
+          console.warn('cannot play next video in playlist or playlist does not exist');
+        }
+        // change button image when play next video.
+        document.getElementById("playImage" + event.data.tabId).className = 'pauseImage';
+      });
+    });
 
 		$('#jump'+tab.id).on('click', {tabId: tab.id, windowId: tab.windowId}, function(event) {
 			console.log('Clicked tab with event state ', event.data.tabId);
