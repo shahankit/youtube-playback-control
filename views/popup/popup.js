@@ -14,8 +14,8 @@ chrome.tabs.query(queryInfo, function(tabs) {
         </div>
 				<div class="tabInfo" id="jump${tab.id}">
 					<div class="close" id="close${tab.id}" title="close tab"></div>
-					<div class="title">${tab.title}</div>
-					<div class="url">${tab.url}</div>
+					<div class="title" id="title${tab.id}">${tab.title}</div>
+					<div class="url" id="url${tab.id}">${tab.url}</div>
 				</div>
 			</div>
 		`
@@ -41,7 +41,6 @@ chrome.tabs.query(queryInfo, function(tabs) {
         if (response.error) {
           console.warn('cannot play next video in playlist or playlist does not exist');
         }
-        // change button image when play next video.
         document.getElementById("playImage" + event.data.tabId).className = 'pauseImage';
       });
     });
@@ -65,4 +64,12 @@ chrome.tabs.query(queryInfo, function(tabs) {
 		$('html').attr('style', 'margin: 0; padding: 0');
 		cl.append($(x));
 	}
+});
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  var re = /www\.youtube\.com/;
+  if (re.test(tab.url) && changeInfo.title) {
+    document.getElementById("title" + tabId).textContent = changeInfo.title;
+    document.getElementById("url" + tabId).textContent = tab.url;
+  }
 });
