@@ -9,10 +9,13 @@ chrome.tabs.query(queryInfo, function(tabs) {
 				<div class="tabimage" id="playpause${tab.id}">
 					<img class="${imageClass}" id="playImage${tab.id}" border="0">
 				</div>
+        <div class="nextimage" id="playnext${tab.id}">
+          <img class="playNext" id="playNextImage${tab.id}" border="0">
+        </div>
 				<div class="tabInfo" id="jump${tab.id}">
 					<div class="close" id="close${tab.id}" title="close tab"></div>
-					<div class="title">${tab.title}</div>
-					<div class="url">${tab.url}</div>
+					<div class="title" id="title${tab.id}">${tab.title}</div>
+					<div class="url" id="url${tab.id}">${tab.url}</div>
 				</div>
 			</div>
 		`
@@ -33,6 +36,15 @@ chrome.tabs.query(queryInfo, function(tabs) {
 			});
 		});
 
+    $('#playnext'+tab.id).on('click', {tabId: tab.id}, function(event) {
+      chrome.tabs.sendMessage(event.data.tabId, {message: 'toggle_playlist_next', tabId: event.data.tabId}, function(response) {
+        if (response.error) {
+          console.warn('cannot play next video in playlist or playlist does not exist');
+        }
+        document.getElementById("playImage" + event.data.tabId).className = 'pauseImage';
+      });
+    });
+
 		$('#jump'+tab.id).on('click', {tabId: tab.id, windowId: tab.windowId}, function(event) {
 			console.log('Clicked tab with event state ', event.data.tabId);
 			chrome.windows.update(event.data.windowId, {focused: true});
@@ -52,4 +64,12 @@ chrome.tabs.query(queryInfo, function(tabs) {
 		$('html').attr('style', 'margin: 0; padding: 0');
 		cl.append($(x));
 	}
+});
+
+chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+  var re = /www\.youtube\.com/;
+  if (re.test(tab.url) && changeInfo.title) {
+    document.getElementById("title" + tabId).textContent = changeInfo.title;
+    document.getElementById("url" + tabId).textContent = tab.url;
+  }
 });

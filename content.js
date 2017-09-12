@@ -14,5 +14,14 @@ chrome.runtime.onMessage.addListener (
       	sendResponse({error: 'No video object found'});
       }
     }
+    if (request.message === "toggle_playlist_next") {
+      var nextButton = document.getElementsByClassName("ytp-next-button")[0];
+      if (nextButton) {
+        nextButton.click();
+        sendResponse({next: true, tabId: request.tabId});
+      } else {
+        sendResponse({error: 'Cannot play next video'});
+      }
+    }
   }
 );

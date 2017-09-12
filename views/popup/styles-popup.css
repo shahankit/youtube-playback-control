@@ -93,6 +93,16 @@ div.tabimage img {
   height: 100%;
 }
 
+div.nextimage {
+  margin: 0 2px 0 2px;
+}
+
+div.nextimage img {
+  vertical-align: middle;
+  border-radius: 3px;
+  height: 100%;
+}
+
 div.hideicon img {
   display: none;
 }
@@ -152,7 +162,7 @@ div.content {
 }
 
 div.tabInfo {
-  width: 322px;
+  width: 272px;
   padding: 0 2px 0 2px;
   border-radius: 3px;
 }
@@ -171,6 +181,14 @@ img.pauseImage {
 
 img.pauseImage:hover {
   content: url('/assets/pauseHover.png');
+}
+
+img.playNext {
+  content: url('/assets/next.png');
+}
+
+img.playNext:hover {
+  content: url('/assets/nextHover.png');
 }
 
 .tabInfo:hover, .tabInfo:hover div.title, .tabInfo:hover div.url {
