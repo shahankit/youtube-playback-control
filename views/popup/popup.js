@@ -54,6 +54,7 @@ chrome.tabs.query(queryInfo, function(tabs) {
 		$('#close'+tab.id).on('click', {tabId: tab.id}, function(event) {
 			console.log('Clicked tab with event state ', event.data.tabId);
 			chrome.tabs.remove(event.data.tabId);
+      $(`#${event.data.tabId}`).remove();
 		});
 	});
 	if (tabs.length == 0) {
