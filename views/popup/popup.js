@@ -36,14 +36,14 @@ chrome.tabs.query(queryInfo, function(tabs) {
 			});
 		});
 
-    $('#playnext'+tab.id).on('click', {tabId: tab.id}, function(event) {
-      chrome.tabs.sendMessage(event.data.tabId, {message: 'toggle_playlist_next', tabId: event.data.tabId}, function(response) {
-        if (response.error) {
-          console.warn('cannot play next video in playlist or playlist does not exist');
-        }
-        document.getElementById("playImage" + event.data.tabId).className = 'pauseImage';
-      });
-    });
+		$('#playnext'+tab.id).on('click', {tabId: tab.id}, function(event) {
+			chrome.tabs.sendMessage(event.data.tabId, {message: 'toggle_playlist_next', tabId: event.data.tabId}, function(response) {
+				if (response.error) {
+					console.warn('cannot play next video in playlist or playlist does not exist');
+				}
+				document.getElementById("playImage" + event.data.tabId).className = 'pauseImage';
+			});
+		});
 
 		$('#jump'+tab.id).on('click', {tabId: tab.id, windowId: tab.windowId}, function(event) {
 			console.log('Clicked tab with event state ', event.data.tabId);
@@ -54,6 +54,7 @@ chrome.tabs.query(queryInfo, function(tabs) {
 		$('#close'+tab.id).on('click', {tabId: tab.id}, function(event) {
 			console.log('Clicked tab with event state ', event.data.tabId);
 			chrome.tabs.remove(event.data.tabId);
+			$(`#${event.data.tabId}`).remove();
 		});
 	});
 	if (tabs.length == 0) {
@@ -67,9 +68,9 @@ chrome.tabs.query(queryInfo, function(tabs) {
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  var re = /www\.youtube\.com/;
-  if (re.test(tab.url) && changeInfo.title) {
-    document.getElementById("title" + tabId).textContent = changeInfo.title;
-    document.getElementById("url" + tabId).textContent = tab.url;
-  }
+	var re = /www\.youtube\.com/;
+	if (re.test(tab.url) && changeInfo.title) {
+		document.getElementById("title" + tabId).textContent = changeInfo.title;
+		document.getElementById("url" + tabId).textContent = tab.url;
+	}
 });
